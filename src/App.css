@@ -1,0 +1,24 @@
+.active-link li{
+    background-color: #F0F0F0;
+    color: #555555 !important;
+}
+
+.active-link li i, .active-link li p{
+    color: #555555 !important;
+}
+
+/* @media (max-width: 768px) {
+    .active-link li{
+        width: 50px;
+        border-radius: 50%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 10px;
+    }
+
+    .active-link:hover li{
+        transform: scale(1.2);
+    }
+} */
