@@ -58,7 +58,7 @@ const ListHotel = ({setNombre, recherche}) => {
                 <CardHotel key={index}>
                     <CardImg src={hotel.image ? hotel.image : imags} />
                     <InfoHotel>
-                        <Texte fonts="12px" color="#8d4b38">{hotel.adresse}</Texte>
+                        <Texte fonts="10px" color="#8d4b38">{hotel.adresse}</Texte>
                         <Texte fonts="18px" font="600">{hotel.nom}</Texte>
                         <Texte margin="10px" fonts="12px">{hotel.prix} {' '} {hotel.devise} par nuit</Texte>
                     </InfoHotel>
