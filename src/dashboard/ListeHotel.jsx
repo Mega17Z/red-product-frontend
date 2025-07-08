@@ -6,6 +6,8 @@ import { useState, useEffect } from 'react';
 
 
 const ListHotel = ({setNombre, recherche}) => {
+    const url = "https://red-product-backend-tsia.onrender.com"
+
     const [hotels, setHotels] = useState([])
     const [leshotels, setLesHotels] = useState([])
 
@@ -18,7 +20,7 @@ const ListHotel = ({setNombre, recherche}) => {
             }
 
             try{
-                const response = await fetch('https://red-product-backend-tsia.onrender.com/api/hotels',{
+                const response = await fetch(`${url}/api/hotels`,{
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
@@ -54,7 +56,7 @@ const ListHotel = ({setNombre, recherche}) => {
         <ConteneurCard gap="10px" min="220px">
             {leshotels.map((hotel, index) => (
                 <CardHotel key={index}>
-                    <CardImg src={hotel.image ? `https://red-product-backend-tsia.onrender.com/uploads/${hotel.image}` : imags} />
+                    <CardImg src={hotel.image ? hotel.image : imags} />
                     <InfoHotel>
                         <Texte fonts="12px" color="#8d4b38">{hotel.adresse}</Texte>
                         <Texte fonts="18px" font="600">{hotel.nom}</Texte>

@@ -22,6 +22,8 @@ import derriere from '../assets/derriere.png'
 import { useState } from "react";
 
 export const Connexion = () => {
+    const url = "https://red-product-backend-tsia.onrender.com"
+
     const [email, setEmail] = useState()
     const [motdepasse, setMotdepasse] = useState()
 
@@ -29,7 +31,7 @@ export const Connexion = () => {
 
     const soumettreConnexion = async () => {
     try{
-      const response = await fetch('https://red-product-backend-tsia.onrender.com/api/auth/connexion', {
+      const response = await fetch(`${url}/api/auth/connexion`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, motdepasse })
@@ -60,8 +62,8 @@ export const Connexion = () => {
                 </Boxflex>
                 <BoxStylled>
                     <Texte>Connectez-vous en tant que Admin</Texte>
-                    <InputStyle placeholder="Email" margin="25px" onChange={e => setEmail(e.target.value)} />
-                    <InputStyle placeholder="Mot de passe" margin="35px" onChange={e => setMotdepasse(e.target.value)} />
+                    <InputStyle placeholder="Email" margin="25px" onChange={e => setEmail(e.target.value)} type="email" required />
+                    <InputStyle placeholder="Mot de passe" margin="35px" onChange={e => setMotdepasse(e.target.value)} type="password" />
                     <Boxflex margin="30px">
                         <LeCheck type="checkbox" />
                         <Texte>Gardez-moi connecté</Texte>

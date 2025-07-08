@@ -5,6 +5,8 @@ import { useState } from 'react';
 
 
 const NouveauHotel = () => {
+    const url = "https://red-product-backend-tsia.onrender.com"
+
     const navigate = useNavigate()
 
     const [form, setForm] = useState({
@@ -46,10 +48,9 @@ const NouveauHotel = () => {
         }
 
         try{
-            const response = await fetch('https://red-product-backend-tsia.onrender.com/api/ajout', {
+            const response = await fetch(`${url}/api/ajout`, {
                 method: 'POST',
                 headers: {
-                    // 'Content-Type': 'application/json',
                     'Authorization': `Bearer ${token}`
                 },
                 body: formData,

@@ -26,8 +26,10 @@ const Inscription = () => {
   const navigate = useNavigate()
 
   const soumettreInscription = async () => {
+    const url = "https://red-product-backend-tsia.onrender.com"
+
     try{
-      const response = await fetch('https://red-product-backend-tsia.onrender.com/api/auth/inscription', {
+      const response = await fetch(`${url}/api/auth/inscription`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ nom, email, motdepasse })
@@ -58,9 +60,9 @@ const Inscription = () => {
         </Boxflex>
         <BoxStylled>
           <Texte>Inscrivez-vous en tant qu' Admin</Texte>
-          <InputStyle placeholder="Nom" margin="25px" onChange={e => setNom(e.target.value)} />
-          <InputStyle placeholder="Email" margin="25px" onChange={e => setEmail(e.target.value)} />
-          <InputStyle placeholder="Mot de passe" margin="25px" onChange={e => setMotdepasse(e.target.value)} />
+          <InputStyle placeholder="Nom" margin="25px" onChange={e => setNom(e.target.value)} type='text' maxLength={25} />
+          <InputStyle placeholder="Email" margin="25px" onChange={e => setEmail(e.target.value)} type='email' required />
+          <InputStyle placeholder="Mot de passe" margin="25px" onChange={e => setMotdepasse(e.target.value)} type='password' />
           <Boxflex margin="30px">
             <LeCheck type="checkbox" />
             <Texte>Gardez-moi connecté</Texte>
