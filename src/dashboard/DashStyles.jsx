@@ -85,7 +85,7 @@ export const ImageProfil = styled.img`
     height: ${props => props.height || '50px'};
     border-radius: 50%;
     object-fit: cover;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 `
 
 export const Indication = styled.div`

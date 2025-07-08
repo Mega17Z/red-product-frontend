@@ -4,6 +4,7 @@ import { EndessusBackground, Texte, Boxflex, Lelogo, LogoTitre} from "../stylesP
 
 import derriere from '../assets/derriere.png'
 import logo from '../assets/logo.png'
+import profil from '../assets/profil.png'
 import { useState } from "react";
 import { useEffect } from "react";
 
@@ -64,7 +65,7 @@ const Sidebar = () => {
                </UlSidebar>
            </HautSidebar>
            <BasSidebar>
-               <ImageProfil width="40px" height="40px" src='' />
+               <ImageProfil width="40px" height="40px" src={profil} />
                <MasquerElement siActive={activeSidebar}>
                 <div>
                     <Texte color='#FFFFFF' margin="5px">{utilisateur ? utilisateur.nom : "Utilisateur"}</Texte>

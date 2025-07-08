@@ -1,5 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { BoxHead, ImageProfil, TitreList, FlexBox, ContentInput, InputRecherche, IconRecherche, BoxRelative, IconDesign, NotificationNombre, SpanConnecte } from './DashStyles'
+import profil from '../assets/profil.png'
 
 const Header = ({setRecherche}) => {
     const navigate = useNavigate()
@@ -27,7 +28,7 @@ const Header = ({setRecherche}) => {
                     <NotificationNombre>3</NotificationNombre>
                 </BoxRelative>
                 <BoxRelative>
-                    <ImageProfil width="35px" height="35px" src='' />
+                    <ImageProfil width="35px" height="35px" src={profil} />
                     <SpanConnecte />
                 </BoxRelative>
                 <div onClick={deconnexion}>
