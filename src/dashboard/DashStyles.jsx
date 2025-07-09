@@ -312,9 +312,7 @@ export const CircleContent = styled.div`
 `
 
 
-
 // ----------------------- Dashbord Hotel ------------------------------ 
-
 
 
 // Liste Hotels

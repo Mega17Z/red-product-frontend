@@ -39,10 +39,12 @@ export const Connexion = () => {
 
       const donner = await response.json()
       if(response.ok){
-        alert('Connexion Reussi')
+        // alert('Connexion Reussi')
         localStorage.setItem('token', donner.token)
         localStorage.setItem('user', JSON.stringify(donner.user))
-        navigate('/principal')
+        // navigate('/principal')
+        navigate('/principal', { state: { afficherPassage: true, message: "Connexion Reussi" } });
+
       } else {
         alert(donner.message)
       }

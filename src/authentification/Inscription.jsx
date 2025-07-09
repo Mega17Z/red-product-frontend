@@ -37,10 +37,10 @@ const Inscription = () => {
 
       const donner = await response.json()
       if(response.ok){
-        alert('Inscription Reussi')
+        // alert('Inscription Reussi')
         localStorage.setItem('token', donner.token)
         localStorage.setItem('user', JSON.stringify(donner.user))
-        navigate('/principal')
+        navigate('/principal', { state: { afficherPassage: true, message: "Inscription Reussi" } })
       } else {
         alert(donner.message)
       }

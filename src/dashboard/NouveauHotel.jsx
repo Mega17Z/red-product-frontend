@@ -59,8 +59,8 @@ const NouveauHotel = () => {
             const donner = await response.json()
 
             if(response.ok){
-                alert('Hotel ajouté')
-                navigate('/principal/hotels')
+                // alert('Hotel ajouté')
+                navigate('/principal/hotels', { state: { afficherPassage: true, message: "Hôtel ajouté" } })
             } else {
                 alert(donner.message)
             }
